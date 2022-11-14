@@ -1,0 +1,31 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em;
+
+  .logo-container {
+    height: 100%;
+   
+    .logo:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .nav-links-container {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+   
+    .nav-link {
+      padding: 1em 2em;
+      cursor: pointer;
+    }
+   
+    .nav-link:hover {
+      transform: scale(1.1);
+    }
+  }
+}
