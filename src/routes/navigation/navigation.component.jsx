@@ -22,8 +22,8 @@ const Navigation = () => {
     },
     {
       id: 3,
-      name: "sign in",
-      path: "/sign_in",
+      name: "Sign in",
+      path: "/auth",
       className: "nav-link",
     },
   ];
