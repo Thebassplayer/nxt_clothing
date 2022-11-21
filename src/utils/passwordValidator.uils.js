@@ -2,6 +2,11 @@ export const passwordValidator = (password, confirmPassword) => {
   return confirmPassword === password;
 };
 
+// --- Get fieldname by Id ---
+export function getFieldName(input) {
+  return input.id.charAt(0).toUpperCase().concat(input.id.slice(1));
+}
+
 // --- Username validation ---
 export function checkUsernameLength(input, min, max) {
   if (input.value.length <= min) {

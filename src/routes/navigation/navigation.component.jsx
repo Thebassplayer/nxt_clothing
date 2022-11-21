@@ -1,32 +1,14 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
-import { ReactComponent as NxtLogo } from "../../assets/crown.svg";
 
-import NavLink from "../../components/nav-link/nav-link.component";
+import { ReactComponent as NxtLogo } from "../../assets/crown.svg";
+import { UserContext } from "../../contexts/user.context";
+import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 import "./navigation.styles.scss";
 
 const Navigation = () => {
-  const navButtons = [
-    {
-      id: 1,
-      name: "shop",
-      path: "/shop",
-      className: "nav-link",
-    },
-    {
-      id: 2,
-      name: "contact",
-      path: "/contact",
-      className: "nav-link",
-    },
-    {
-      id: 3,
-      name: "Sign in",
-      path: "/auth",
-      className: "nav-link",
-    },
-  ];
+  const { currentUser } = useContext(UserContext);
 
   return (
     <Fragment>
@@ -35,10 +17,18 @@ const Navigation = () => {
           <NxtLogo className="logo" />
         </Link>
         <div className="nav-links-container">
-          {navButtons.map(button => {
-            console.log("navButtons mapped");
-            return <NavLink key={button.id} data={button} />;
-          })}
+          <Link className="nav-link" to="/shop">
+            SHOP
+          </Link>
+          {currentUser ? (
+            <Link className="nav-link" onClick={signOutUser}>
+              sign out
+            </Link>
+          ) : (
+            <Link className="nav-link" to="/sign-in">
+              sign in
+            </Link>
+          )}
         </div>
       </div>
       <Outlet />
