@@ -1,0 +1,10 @@
+.quantity-btn-container {
+  display: flex;
+  justify-content: center;
+
+  .quantity-btn-container__button {
+    width: 0.75rem;
+    margin: 0 1rem;
+    cursor: pointer;
+  }
+}

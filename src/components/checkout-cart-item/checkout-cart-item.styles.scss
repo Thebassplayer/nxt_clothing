@@ -1,0 +1,19 @@
+.item-container {
+  display: grid;
+  grid-template-columns: 13rem repeat(5, 1fr);
+  place-items: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid black;
+
+  img {
+    width: 12rem;
+  }
+
+  .item-container__delete-button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1.25rem;
+  }
+}

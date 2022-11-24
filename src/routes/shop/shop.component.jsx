@@ -9,8 +9,6 @@ import "./shop.styles.scss";
 const Shop = () => {
   const { products } = useContext(ProductsContext);
 
-  console.log("currentProducts: ", products);
-
   return (
     <div className="products-container">
       {products.map(product => (
