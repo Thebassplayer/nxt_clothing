@@ -19,25 +19,27 @@ const Navigation = () => {
   return (
     <>
       <div className="navigation">
-        <Link className="logo-container" to="/">
-          <NxtLogo className="logo" />
-        </Link>
-        <div className="nav-links-container">
-          <Link className="nav-link" to="/shop">
-            SHOP
+        <div className="navigation-container">
+          <Link className="logo-container" to="/">
+            <NxtLogo className="logo" />
           </Link>
-          {currentUser ? (
-            <Link className="nav-link" onClick={signOutUser}>
-              sign out
+          <div className="nav-links-container">
+            <Link className="nav-link" to="/shop">
+              SHOP
             </Link>
-          ) : (
-            <Link className="nav-link" to="/auth">
-              sign in
-            </Link>
-          )}
-          <CartIcon />
+            {currentUser ? (
+              <Link className="nav-link" onClick={signOutUser}>
+                sign out
+              </Link>
+            ) : (
+              <Link className="nav-link" to="/auth">
+                sign in
+              </Link>
+            )}
+            <CartIcon />
+          </div>
+          {displayCart && <CartDropdown />}
         </div>
-        {displayCart && <CartDropdown />}
       </div>
       <Outlet />
     </>

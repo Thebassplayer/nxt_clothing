@@ -9,7 +9,7 @@ import CartItem from "../cart-item/cart-item.component";
 import "./cart-dropdown.styles.scss";
 
 const CartDropdown = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, setDisplayCart } = useContext(CartContext);
 
   const navigate = useNavigate();
 
@@ -24,7 +24,14 @@ const CartDropdown = () => {
           <CartItem key={item.id} cartItem={item} />
         ))}
       </div>
-      <Button onClick={goToCheckoutHandler}>checkout</Button>
+      <Button
+        onClick={() => {
+          goToCheckoutHandler();
+          setDisplayCart();
+        }}
+      >
+        checkout
+      </Button>
     </div>
   );
 };
