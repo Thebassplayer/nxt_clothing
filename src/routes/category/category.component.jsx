@@ -21,9 +21,9 @@ const Category = () => {
     <>
       <div className="category-nav-contaier">
         <Link to="/shop">
-          <ArrowLeft className="category-link link" />
+          <ArrowLeft className="category-nav-link link" />
         </Link>
-        <h2 className="category-container__title">{category}</h2>
+        <h2 className="category-nav-container__title">{category}</h2>
       </div>
 
       <div className="category-container">

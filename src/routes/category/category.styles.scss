@@ -8,15 +8,19 @@
 .category-nav-contaier {
   display: flex;
   align-items: center;
-  margin-block-end: 1rem;
+  margin: 0 0 1rem 1rem;
 }
 
-.category-container__title {
+.category-nav-container__title {
   text-transform: uppercase;
   font-size: 1.5rem;
-  margin: 0 0 0 1rem;
+  margin: 0 auto 0 auto;
 }
 
-.category-link {
+.category-nav-link {
   width: 1rem;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
