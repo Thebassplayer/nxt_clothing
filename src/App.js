@@ -1,11 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import {
   onAuthStateChangedListener,
-  signOutUser,
   createUserDocumentFromAuth,
 } from "./utils/firebase/firebase.utils";
 import Navigation from "./routes/navigation/navigation.component";
@@ -18,6 +16,7 @@ import { setCurrentUser } from "./store/user/user.action";
 const App = () => {
   const dispatch = useDispatch();
 
+  //TODO: Create custom hook of useEffect
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener(user => {
       if (user) {

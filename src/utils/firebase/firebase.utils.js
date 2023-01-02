@@ -61,7 +61,6 @@ export const addCollectionAndDocuments = async (
   });
 
   await batch.commit();
-  console.log("Batch done");
 };
 
 // Retrive products data from firebase

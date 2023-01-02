@@ -14,6 +14,7 @@ const Category = () => {
   const categoriesMap = useSelector(selectCategoriesMap);
   const [products, setProducts] = useState(categoriesMap[category]);
 
+  //TODO: Create a custom hook for useEffect
   useEffect(() => {
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);

@@ -14,10 +14,10 @@ import "./shop.styles.scss";
 const Shop = () => {
   const dispatch = useDispatch();
 
+  //TODO: Create custom hook for useEffect
   useEffect(() => {
     const getCategoriesMap = async () => {
       const categoriesArray = await getCategoriesAndDocuments();
-      console.log(categoriesArray);
 
       dispatch(setCategories(categoriesArray));
     };
