@@ -11,11 +11,13 @@ import "./category.styles.scss";
 
 const Category = () => {
   const { category } = useParams();
+  console.log("render/re-rendering category");
   const categoriesMap = useSelector(selectCategoriesMap);
   const [products, setProducts] = useState(categoriesMap[category]);
 
   //TODO: Create a custom hook for useEffect
   useEffect(() => {
+    console.log("effect fired callig setProducts");
     setProducts(categoriesMap[category]);
   }, [category, categoriesMap]);
 
